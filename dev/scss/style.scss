@@ -1,38 +1,38 @@
 @import "bourbon/bourbon";
 
 @mixin breakpoint($class) {
-	@if $class == sm { @media (max-width: 767px) { @content; } }
+    @if $class == sm { @media (max-width: 767px) { @content; } }
 
-	@else if $class == md { @media (min-width: 768px) and (max-width: 1119px) { @content; } }
+    @else if $class == md { @media (min-width: 768px) and (max-width: 1119px) { @content; } }
 
-	@else if $class == lg { @media (min-width: 1120px) { @content; } }
+    @else if $class == lg { @media (min-width: 1120px) { @content; } }
 
-	@else { @warn "Breakpoint mixin supports: sm, md, lg"; }
+    @else { @warn "Breakpoint mixin supports: sm, md, lg"; }
 }
 
 @mixin center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	@include transform(translate(-50%, -50%));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
 }
 
 @mixin get-ellipsis {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @mixin get-shadow {
-	box-shadow: 0px 1px 1px #AAA;
+    box-shadow: 0px 1px 1px #AAA;
 
-	&:hover {
-		box-shadow: 0px 2px 4px #AAA;
-	}
+    &:hover {
+        box-shadow: 0px 2px 4px #AAA;
+    }
 }
 
 @mixin get-transition {
-	@include transition-duration(0.35s);
+    @include transition-duration(0.35s);
 }
 
 
@@ -44,40 +44,40 @@
 ================================================*/
 
 a:hover, a:active, a:focus {
-	outline: 0;
-	text-decoration: none;
+    outline: 0;
+    text-decoration: none;
 }
 
 body {
-	background-color: #F2F2F2;
-	font-family: 'Source Sans Pro', sans-serif;
-	padding: em(32) 0;
-	@include get-transition();
+    background-color: #F2F2F2;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: em(32) 0;
+    @include get-transition();
 
-	&.open-sidebar {
-		margin-right: em(320);
-	}
+    &.open-sidebar {
+        margin-right: em(320);
+    }
 
-	@include breakpoint(sm) {
-		padding: em(16) 0;
+    @include breakpoint(sm) {
+        padding: em(16) 0;
 
-		&.open-sidebar {
-			margin-right: em(0);
-			max-width:100%;
-			max-height:100%;
-			overflow:hidden;
-		}
-	}
+        &.open-sidebar {
+            margin-right: em(0);
+            max-width:100%;
+            max-height:100%;
+            overflow:hidden;
+        }
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Varela Round', sans-serif;
+    font-family: 'Varela Round', sans-serif;
 }
 
 @include breakpoint(md) {
-	.container {
-		width: 90% !important;
-	}
+    .container {
+        width: 90% !important;
+    }
 }
 
 
@@ -89,11 +89,11 @@ h1, h2, h3, h4, h5, h6 {
 ======================================*/
 
 #show-sidebar {
-	z-index: 1;
+    z-index: 1;
 }
 
 #infinite .section {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 
@@ -105,321 +105,321 @@ h1, h2, h3, h4, h5, h6 {
 ===========================================*/
 
 .block {
-	width: 100%;
+    width: 100%;
 }
 
 .btn {
-	border-radius: em(2);
-	background-color: #428BCA;
-	padding: em(6) em(12);
-	@include get-transition();
+    border-radius: em(2);
+    background-color: #428BCA;
+    padding: em(6) em(12);
+    @include get-transition();
 
-	&:hover {
-		background-color: #3071A9;
-	}
+    &:hover {
+        background-color: #3071A9;
+    }
 }
 
 .comment {
-	
-	h3 {
-		margin: 0;
+    
+    h3 {
+        margin: 0;
 
-		a {
-			color: black;
-			display: block;
-		}
-	}
+        a {
+            color: black;
+            display: block;
+        }
+    }
 
-	li {
-		border-top: 1px solid #ebebeb;
-		margin: em(16) 0;
-		padding-top: em(16);
-		position: relative;
-	}
+    li {
+        border-top: 1px solid #ebebeb;
+        margin: em(16) 0;
+        padding-top: em(16);
+        position: relative;
+    }
 
-	ol {
-		list-style: none;
-		margin: 0;
-	}
+    ol {
+        list-style: none;
+        margin: 0;
+    }
 
-	textarea {
-		max-width: 100%;
-	}
+    textarea {
+        max-width: 100%;
+    }
 
-	.avatar {
-		float: left;
-		margin-right: em(16);
+    .avatar {
+        float: left;
+        margin-right: em(16);
 
-		@include breakpoint(sm) {
-			margin-right: em(4);
-			height: em(46);
-			width: em(46);
-		}
-	}
+        @include breakpoint(sm) {
+            margin-right: em(4);
+            height: em(46);
+            width: em(46);
+        }
+    }
 
-	.comment-list > li:last-child {
-		border-bottom: 1px solid #ebebeb;
-		margin-bottom: em(32);
-	}
+    .comment-list > li:last-child {
+        border-bottom: 1px solid #ebebeb;
+        margin-bottom: em(32);
+    }
 
-	.comment-reply-link {
-		@extend .btn;
-		color: white;
-		font-size: em(14);
-		padding: 0 em(8);
-		position: absolute;
-		top: 16px;
-		right: 0;
-	}
+    .comment-reply-link {
+        @extend .btn;
+        color: white;
+        font-size: em(14);
+        padding: 0 em(8);
+        position: absolute;
+        top: 16px;
+        right: 0;
+    }
 
-	.comment-form {
-		max-height: 0;
-		overflow: hidden;
-		@include get-transition();
+    .comment-form {
+        max-height: 0;
+        overflow: hidden;
+        @include get-transition();
 
-		&.comment-form-open {
-			max-height: em(640);
-		}
-	}
+        &.comment-form-open {
+            max-height: em(640);
+        }
+    }
 
-	.depth-2 {
-		margin-left: em(64);
+    .depth-2 {
+        margin-left: em(64);
 
-		@include breakpoint(sm) {
-			margin-left: em(32);
-		}
-	}
+        @include breakpoint(sm) {
+            margin-left: em(32);
+        }
+    }
 
-	@include breakpoint(sm) {
-		.comment-author {
-			line-height: 1.4;
-		}
-	}
+    @include breakpoint(sm) {
+        .comment-author {
+            line-height: 1.4;
+        }
+    }
 }
 
 .footer {
-	border-top: 1px solid #DBDBDB;
+    border-top: 1px solid #DBDBDB;
 
-	p {
-		color: #707070;
-		font-size: 14px;
-		margin: em(16) 0 0 0;
-	}
+    p {
+        color: #707070;
+        font-size: 14px;
+        margin: em(16) 0 0 0;
+    }
 }
 
 .form-item {
-	margin-bottom: em(16);
+    margin-bottom: em(16);
 
-	input {
-		height: em(32);
-	}
+    input {
+        height: em(32);
+    }
 
-	input, textarea {
-		border: 1px solid #DBDBDB;
-		padding-left: em(8);
-		resize: none;
-		width: 100%;
-	}
+    input, textarea {
+        border: 1px solid #DBDBDB;
+        padding-left: em(8);
+        resize: none;
+        width: 100%;
+    }
 }
 
 .navigation {
-	h4 {
-		color: #707070;
-		margin: 0;
-	}
+    h4 {
+        color: #707070;
+        margin: 0;
+    }
 
-	a {
-		color: black;
-		display: block;
-		font-weight: bold;
-		width: 100%;
-	}
+    a {
+        color: black;
+        display: block;
+        font-weight: bold;
+        width: 100%;
+    }
 
-	&:first-child:after {
-		background-color: #DBDBDB;
-		content: " ";
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		height: 100%;
-		width: 1px;
-	}
+    &:first-child:after {
+        background-color: #DBDBDB;
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 1px;
+    }
 
-	&.text-left {
-		padding-right: em(32);
-	}
+    &.text-left {
+        padding-right: em(32);
+    }
 
-	&.text-right {
-		padding-left: em(32);
-	}
+    &.text-right {
+        padding-left: em(32);
+    }
 
-	@include breakpoint(sm) {
-		text-align: center;
+    @include breakpoint(sm) {
+        text-align: center;
 
-		&:first-child:after {
-			display: none;
-		}
+        &:first-child:after {
+            display: none;
+        }
 
-		&.text-left {
-			border-bottom: 1px solid #DBDBDB;
-			padding-right: 0;
-			padding-bottom: em(16);
-		}
+        &.text-left {
+            border-bottom: 1px solid #DBDBDB;
+            padding-right: 0;
+            padding-bottom: em(16);
+        }
 
-		&.text-right {
-			border-top: 1px solid #DBDBDB;
-			padding-left: 0;
-			padding-top: em(16);
-		}
-	}
+        &.text-right {
+            border-top: 1px solid #DBDBDB;
+            padding-left: 0;
+            padding-top: em(16);
+        }
+    }
 }
 
 .section {
-	background-color: white;
-	border-radius: em(2);
-	padding: em(32);
-	position: relative;
-	@include get-shadow();
-	@include get-transition();
+    background-color: white;
+    border-radius: em(2);
+    padding: em(32);
+    position: relative;
+    @include get-shadow();
+    @include get-transition();
 
-	&.section-post {
-		padding: em(320) em(32) em(32) em(32);
-	}
+    &.section-post {
+        padding: em(320) em(32) em(32) em(32);
+    }
 
-	@include breakpoint(sm) {
-		padding: em(16);
+    @include breakpoint(sm) {
+        padding: em(16);
 
-		&.section-post {
-			padding: em(192) em(16) em(16) em(16);
-		}
-	}
+        &.section-post {
+            padding: em(192) em(16) em(16) em(16);
+        }
+    }
 }
 
 .section-description {
-	color: #707070;
-	margin: em(16) 0 0 0;
+    color: #707070;
+    margin: em(16) 0 0 0;
 
-	p {
-		text-align: justify;
-	}
+    p {
+        text-align: justify;
+    }
 
-	p:last-child {
-		margin-bottom: 0;
-	}
+    p:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .section-head {
-	background-color: black;
-	border-top-left-radius: 2px;
-	border-top-right-radius: 2px;
-	height: em(320);
-	overflow: hidden;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
+    background-color: black;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    height: em(320);
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
 
-	img {
-		opacity: 0.2;
-	}
+    img {
+        opacity: 0.2;
+    }
 
-	.section-head-title {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		padding: em(32);
-		@include transform(translate(-50%, -50%));
-		text-align: center;
-		width: 100%;
-	}
+    .section-head-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: em(32);
+        @include transform(translate(-50%, -50%));
+        text-align: center;
+        width: 100%;
+    }
 
-	.section-title a, .section-meta a {
-		color: white;
-	}
+    .section-title a, .section-meta a {
+        color: white;
+    }
 
-	@include breakpoint(sm) {
-		height: em(192);
-	}
+    @include breakpoint(sm) {
+        height: em(192);
+    }
 }
 
 .section-meta {
-	color: #999;
-	font-size: 14px;
-	margin: 0;
+    color: #999;
+    font-size: 14px;
+    margin: 0;
 }
 
 .section-title {
-	margin: 0;
+    margin: 0;
 
-	a {
-		color: black;
-	}
+    a {
+        color: black;
+    }
 }
 
 .sidebar {
-	background-color: #1C171E;
-	color: #FFF;
-	height: 100%;
-	margin-right: em(-320);
-	overflow-y: auto;
-	padding: em(32);
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: em(320);
-	z-index: 1;
-	@include get-transition();
+    background-color: #1C171E;
+    color: #FFF;
+    height: 100%;
+    margin-right: em(-320);
+    overflow-y: auto;
+    padding: em(32);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: em(320);
+    z-index: 1;
+    @include get-transition();
 
-	h4 {
-		color: white;
-		margin: 0;
-	}
+    h4 {
+        color: white;
+        margin: 0;
+    }
 
-	p {
-		color: #707070;
-		font-size: 14px;
-		margin: 0;
-	}
+    p {
+        color: #707070;
+        font-size: 14px;
+        margin: 0;
+    }
 
-	select {
-		color: black;
-		width: 100%;
-	}
+    select {
+        color: black;
+        width: 100%;
+    }
 
-	ul {
-		list-style: none;
-		margin: 0;
-	}
+    ul {
+        list-style: none;
+        margin: 0;
+    }
 
-	ul a {
-		background-color: #444;
-		color: white;
-		display: block;
-		padding: em(4) em(8);
-		@include get-transition();
+    ul a {
+        background-color: #444;
+        color: white;
+        display: block;
+        padding: em(4) em(8);
+        @include get-transition();
 
-		&:hover {
-			background-color: #F2F2F2;
-			color: #1C171E;
-		}
-	}
+        &:hover {
+            background-color: #F2F2F2;
+            color: #1C171E;
+        }
+    }
 
-	ul li + li a {
-		border-top: 1px solid #1C171E;
-	}
+    ul li + li a {
+        border-top: 1px solid #1C171E;
+    }
 
-	&.show {
-		margin-right: 0;
-	}
+    &.show {
+        margin-right: 0;
+    }
 
-	.sidebar-section {
-		margin-bottom: em(32);
-	}
+    .sidebar-section {
+        margin-bottom: em(32);
+    }
 
-	@include breakpoint(sm) {
-		&.show {
-			width: 100%;
-		}
-	}
+    @include breakpoint(sm) {
+        &.show {
+            width: 100%;
+        }
+    }
 }
